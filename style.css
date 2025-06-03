@@ -13,7 +13,7 @@ body {
 
 /* Style for the main heading */
 h1 {
-  text-align: center;            /* Centers the heading */
+  text-align: left;            /* Align the main heading to the left */
   color: #fff;                   /* White text for h1 */
 }
 
@@ -82,16 +82,15 @@ h2 {
 }
 
 .hero-section h1, .hero-section p, .hero-btn {
-  text-align: left;        /* Ensure all hero content is left-aligned */
+  color: #fff; /* Make all hero section text white */
 }
 
 .hero-section h1 {
-  color: #fff;            /* Deep green for the heading */
   margin-bottom: 12px;
 }
 
 .hero-section p {
-  color: #555;               /* Friendly dark gray for text */
+  color: #fff;               /* White text for better contrast */
   font-size: 20px;
 }
 
@@ -176,46 +175,62 @@ h2 {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  margin: 0 16px 0 0;
+  margin-left: auto;
+  margin-right: 16px;
 }
 .hamburger span {
   display: block;
   width: 28px;
   height: 4px;
-  background: #005f7f;
+  background: #fff;
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
 }
 
-/* Hide nav links on mobile by default */
 #nav-links {
-  transition: max-height 0.3s;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: none;
+  position: static;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  transition: none;
 }
 
 @media (max-width: 700px) {
-  .navbar ul {
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: 16px;
+  }
+  #nav-links {
     flex-direction: column;
-    align-items: flex-start;
-    background: #e3f2fd;
+    align-items: flex-end;
+    background: #005f7f; /* Deep blue for dropdown menu background */
     position: absolute;
     top: 60px;
-    left: 0;
-    width: 100vw;
+    right: 0;
+    width: 200px;
     max-height: 0;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     z-index: 100;
+    border-radius: 0 0 0 12px;
+    transition: max-height 0.3s;
   }
-  .navbar ul.show {
-    max-height: 300px; /* Show menu when toggled */
+  #nav-links.show {
+    max-height: 300px;
     padding-bottom: 12px;
   }
   .navbar li {
-    margin: 16px 0 0 24px;
-  }
-  .hamburger {
-    display: flex; /* Show hamburger on mobile */
+    margin: 16px 24px 0 0;
   }
 }
 

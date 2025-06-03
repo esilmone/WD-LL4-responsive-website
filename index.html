@@ -9,8 +9,73 @@
 </head>
 
 <body>
-  Hello world
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <!-- Hamburger icon for mobile -->
+    <div class="hamburger" id="hamburger-menu" aria-label="Open navigation menu" tabindex="0">
+      <!-- Three lines for the hamburger icon -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <!-- Main heading for the website -->
+    <h1>Welcome to Your Next Adventure!</h1>
+    <!-- Short description for the hero section -->
+    <p>Discover amazing places and plan your dream trip with us.</p>
+  </div>
+  <!-- Travel Cards Section -->
+  <h2>Popular Travel Destinations</h2>
+
+  <!-- Cards container -->
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card" id="switzerland">
+      <!-- Image for the destination -->
+      <img src="img/switzerland.jpg" alt="Switzerland">
+      <!-- Name of the place -->
+      <h2>Mountain Escape</h2>
+      <!-- Short description -->
+      <p>Enjoy beautiful mountain views and fresh air.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card" id="philippines">
+      <img src="img/philippines.jpg" alt="Philippines Beach">
+      <h2>Sunny Beach</h2>
+      <p>Relax on the sand and swim in the sea.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card" id="greece">  
+      <img src="img/greece.jpg" alt="Greece City">
+      <h2>City Adventure</h2>
+      <p>Explore exciting cities full of culture.</p>
+    </div>
+  </div>
   <script src="script.js"></script>
+  <script>
+    // Hamburger menu toggle for mobile
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', function() {
+      navLinks.classList.toggle('show');
+    });
+    // Also allow keyboard accessibility
+    hamburger.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navLinks.classList.toggle('show');
+      }
+    });
+  </script>
 </body>
 
 </html>

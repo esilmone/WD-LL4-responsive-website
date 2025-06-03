@@ -1,0 +1,181 @@
+/* Style for the whole page */
+body {
+  font-family: Arial, sans-serif; /* Sets a clean font */
+  background-color: #f0f8ff;     /* Light blue background */
+  margin: 0;                    /* Remove default body margin so hero is flush with the edges */
+  margin-top: 0;                /* Remove top margin so content starts at the very top */
+  min-height: 100vh; /* Make sure body takes at least the full viewport height */
+  display: flex;     /* Use flexbox for centering */
+  flex-direction: column; /* Stack hero and cards vertically */
+  justify-content: center; /* Center content vertically */
+}
+
+/* Style for the main heading */
+h1 {
+  text-align: center;            /* Centers the heading */
+  color: #333;
+}
+
+/* Container for all cards */
+.card-container {
+  display: flex;                 /* Places cards in a row */
+  gap: 20px;                     /* Space between cards */
+  flex-wrap: wrap;               /* Allows cards to move to next line on small screens */
+  justify-content: center;       /* Center cards horizontally */
+}
+
+/* Style for each card */
+.card {
+  background-color: #fff;        /* White background */
+  border: 1px solid #ddd;        /* Light border */
+  border-radius: 8px;            /* Rounded corners */
+  width: 350px;                  /* Increased width for larger cards */
+  padding: 24px;                 /* More space inside the card */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
+  text-align: center;            /* Center text */
+  font-size: 18px;               /* Slightly larger text */
+}
+
+/* Style for the image inside the card */
+.card img {
+  width: 100%;                   /* Image fills the card width */
+  height: 180px;                 /* All images have the same height */
+  object-fit: cover;             /* Crop images to fill the area */
+  border-radius: 6px;            /* Rounded image corners */
+}
+
+/* Style for the card title */
+.card h2 {
+  margin: 12px 0 8px 0;          /* Space around the title */
+  font-size: 20px;
+}
+
+/* Style for the card description */
+.card p {
+  color: #555;                   /* Gray text */
+  font-size: 16px;
+}
+
+/* Hero section with a friendly yellow background */
+.hero-section {
+  background-color: #fff9c4; /* Light, friendly yellow */
+  padding: 80px 20px;        /* More space around the content for a larger hero */
+  border-radius: 12px;       /* Rounded corners */
+  text-align: center;        /* Center the text */
+  margin: 0;                 /* Remove all margins from the hero section */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Soft shadow for depth */
+}
+
+.hero-section h1 {
+  color: #b8860b;            /* Warm gold for the heading */
+  margin-bottom: 12px;
+}
+
+.hero-section p {
+  color: #555;               /* Friendly dark gray for text */
+  font-size: 20px;
+}
+
+/* Navigation bar styles */
+.navbar {
+  width: 100%;
+  background-color: #fffbe7; /* Very light yellow for friendliness */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Soft shadow for separation */
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 200;
+}
+
+.navbar ul {
+  list-style: none; /* Remove bullet points */
+  display: flex;     /* Arrange links in a row */
+  justify-content: center; /* Center the links horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 24px; /* Space between links */
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline */
+  color: #b8860b;        /* Warm gold color for links */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 18px 0;       /* Padding for clickable area */
+  display: block;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #ff9800; /* Brighter orange on hover */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none; /* Hidden by default, shown on mobile */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 0 16px 0 0;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  background: #b8860b;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Hide nav links on mobile by default */
+#nav-links {
+  transition: max-height 0.3s;
+}
+
+@media (max-width: 700px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fffbe7;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    z-index: 100;
+  }
+  .navbar ul.show {
+    max-height: 300px; /* Show menu when toggled */
+    padding-bottom: 12px;
+  }
+  .navbar li {
+    margin: 16px 0 0 24px;
+  }
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 600px) {
+  .card-container {
+    min-height: 100vh;         /* Fill the full viewport height */
+    flex-direction: column;    /* Stack cards vertically */
+    align-items: center;       /* Center cards horizontally */
+    justify-content: center;   /* Center cards vertically */
+    position: relative; 
+    left: -0.8rem;
+  }
+  body {
+    justify-content: flex-start; /* Let hero section stay at the top, cards fill below */
+  }
+}

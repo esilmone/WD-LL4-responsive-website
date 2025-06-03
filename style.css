@@ -1,0 +1,267 @@
+/* Style for the whole page */
+body {
+  font-family: Arial, sans-serif; /* Sets a clean font */
+  background-color: #7fd6ff;     /* Soft green background for sustainability */
+  margin: 0;                    /* Remove default body margin so hero is flush with the edges */
+  margin-top: 0;                /* Remove top margin so content starts at the very top */
+  min-height: 100vh; /* Make sure body takes at least the full viewport height */
+  display: flex;     /* Use flexbox for centering */
+  flex-direction: column; /* Stack hero and cards vertically */
+  align-items: stretch; /* Remove vertical centering that causes blank space */
+  justify-content: flex-start; /* Let content start at the very top */
+}
+
+/* Style for the main heading */
+h1 {
+  text-align: left;            /* Align the main heading to the left */
+  color: #fff;                   /* White text for h1 */
+}
+
+/* Center all h2 headings */
+h2 {
+  text-align: center; /* Center all h2 headings */
+  margin: 2rem auto; /* Center h2 with auto margins */
+}
+
+/* Container for all cards */
+.card-container {
+  display: flex;                 /* Places cards in a row */
+  gap: 20px;                     /* Space between cards */
+  flex-wrap: wrap;               /* Allows cards to move to next line on small screens */
+  justify-content: center;       /* Center cards horizontally */
+}
+
+/* Style for each card */
+.card {
+  background-color: #fff;        /* White background */
+  border: 1px solid #e3f2fd;     /* Lighter blue border for eco look */
+  border-radius: 8px;            /* Rounded corners */
+  width: 350px;                  /* Increased width for larger cards */
+  padding: 24px;                 /* More space inside the card */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
+  text-align: center;            /* Center text */
+  font-size: 18px;               /* Slightly larger text */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth animation for transform and shadow */
+}
+
+.card:hover, .card:focus-within {
+  transform: scale(1.05); /* Slightly enlarge the card on hover or focus */
+  box-shadow: 0 6px 20px rgba(56, 142, 60, 0.18); /* Stronger green shadow on hover */
+}
+
+/* Style for the image inside the card */
+.card img {
+  width: 100%;                   /* Image fills the card width */
+  height: 180px;                 /* All images have the same height */
+  object-fit: cover;             /* Crop images to fill the area */
+  border-radius: 6px;            /* Rounded image corners */
+}
+
+/* Style for the card title */
+.card h2 {
+  margin: 12px 0 8px 0;          /* Space around the title */
+  font-size: 20px;
+  color: #005f7f; /* Green for card titles */
+}
+
+/* Style for the card description */
+.card p {
+  color: #005f7f; /* Darker green for descriptions */
+  font-size: 16px;
+}
+
+/* Hero section with a background image */
+.hero-section {
+  background: url('img/sky.jpg') center/cover no-repeat; /* Only the sky image as background */
+  padding: 80px 20px;        /* More space around the content for a larger hero */
+  border-radius: 12px;       /* Rounded corners */
+  text-align: left;        /* Align text to the left */
+  padding-left: 40px;      /* Add extra space on the left for better appearance */
+  margin: 0;                 /* Remove all margins from the hero section */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Soft shadow for depth */
+}
+
+.hero-section h1, .hero-section p, .hero-btn {
+  color: #fff; /* Make all hero section text white */
+}
+
+.hero-section h1 {
+  margin-bottom: 12px;
+}
+
+.hero-section p {
+  color: #fff;               /* White text for better contrast */
+  font-size: 20px;
+}
+
+/* Hero section button styles */
+.hero-btn {
+  background-color: #7fd6ff; /* Pale blue for the button */
+  color: #fff;            /* White text for the button */
+  border: none;
+  border-radius: 6px;
+  padding: 16px 32px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.10);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-btn:hover, .hero-btn:focus {
+  background-color: #bbdefb;  /* Lighter blue on hover */
+  color: #fff;            /* Keep text white on hover/focus */
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(56, 142, 60, 0.18);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .hero-btn {
+    width: 100%;
+    font-size: 18px;
+    padding: 14px 0;
+  }
+  .hero-section {
+    padding-left: 16px;    /* Less left padding on small screens */
+    padding-right: 16px;
+  }
+}
+
+/* Navigation bar styles */
+.navbar {
+  width: 100%;
+  background-color: #005f7f; /* Deep blue as requested */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Soft shadow for separation */
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 200;
+}
+
+.navbar ul {
+  list-style: none; /* Remove bullet points */
+  display: flex;     /* Arrange links in a row */
+  justify-content: center; /* Center the links horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 24px; /* Space between links */
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline */
+  color: #fff;        /* White for nav links */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 18px 0;       /* Padding for clickable area */
+  display: block;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #7fd6ff; /* Lighter blue on hover for contrast */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none; /* Hidden by default, shown on mobile */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 16px;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+#nav-links {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: none;
+  position: static;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  transition: none;
+}
+
+@media (max-width: 700px) {
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: 16px;
+  }
+  #nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+    background: #005f7f; /* Deep blue for dropdown menu background */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    z-index: 100;
+    border-radius: 0 0 0 12px;
+    transition: max-height 0.3s;
+  }
+  #nav-links.show {
+    max-height: 300px;
+    padding-bottom: 12px;
+  }
+  .navbar li {
+    margin: 16px 24px 0 0;
+  }
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 600px) {
+  .card-container {
+    min-height: 100vh;         /* Fill the full viewport height */
+    flex-direction: column;    /* Stack cards vertically */
+    align-items: center;       /* Center cards horizontally */
+    justify-content: center;   /* Center cards vertically */
+    left: 0;                   /* Remove any left offset */
+    position: static;          /* Remove relative positioning */
+  }
+  .card {
+    margin-left: 0;            /* Remove any left margin */
+    margin-right: 0;           /* Remove any right margin */
+  }
+  body {
+    justify-content: flex-start; /* Let hero section stay at the top, cards fill below */
+  }
+}
+
+/* Footer styles */
+.footer {
+  width: 100%;
+  background-color: #005f7f; /* Deep blue as requested */
+  color: #fff;             /* White text */
+  text-align: center;
+  padding: 18px 0;
+  font-size: 18px;
+  position: relative;
+  margin-top: 32px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}

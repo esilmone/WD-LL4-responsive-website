@@ -1,19 +1,26 @@
 /* Style for the whole page */
 body {
   font-family: Arial, sans-serif; /* Sets a clean font */
-  background-color: #f0f8ff;     /* Light blue background */
+  background-color: #e6f4ea;     /* Soft green background for sustainability */
   margin: 0;                    /* Remove default body margin so hero is flush with the edges */
   margin-top: 0;                /* Remove top margin so content starts at the very top */
   min-height: 100vh; /* Make sure body takes at least the full viewport height */
   display: flex;     /* Use flexbox for centering */
   flex-direction: column; /* Stack hero and cards vertically */
-  justify-content: center; /* Center content vertically */
+  align-items: stretch; /* Remove vertical centering that causes blank space */
+  justify-content: flex-start; /* Let content start at the very top */
 }
 
 /* Style for the main heading */
 h1 {
   text-align: center;            /* Centers the heading */
   color: #333;
+}
+
+/* Center all h2 headings */
+h2 {
+  text-align: center; /* Center all h2 headings */
+  margin: 2rem auto; /* Center h2 with auto margins */
 }
 
 /* Container for all cards */
@@ -27,13 +34,19 @@ h1 {
 /* Style for each card */
 .card {
   background-color: #fff;        /* White background */
-  border: 1px solid #ddd;        /* Light border */
+  border: 1px solid #b2dfdb;        /* Soft teal border for eco look */
   border-radius: 8px;            /* Rounded corners */
   width: 350px;                  /* Increased width for larger cards */
   padding: 24px;                 /* More space inside the card */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
   text-align: center;            /* Center text */
   font-size: 18px;               /* Slightly larger text */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth animation for transform and shadow */
+}
+
+.card:hover, .card:focus-within {
+  transform: scale(1.05); /* Slightly enlarge the card on hover or focus */
+  box-shadow: 0 6px 20px rgba(56, 142, 60, 0.18); /* Stronger green shadow on hover */
 }
 
 /* Style for the image inside the card */
@@ -48,17 +61,18 @@ h1 {
 .card h2 {
   margin: 12px 0 8px 0;          /* Space around the title */
   font-size: 20px;
+  color: #388e3c; /* Green for card titles */
 }
 
 /* Style for the card description */
 .card p {
-  color: #555;                   /* Gray text */
+  color: #2e7d32; /* Darker green for descriptions */
   font-size: 16px;
 }
 
 /* Hero section with a friendly yellow background */
 .hero-section {
-  background-color: #fff9c4; /* Light, friendly yellow */
+  background-color: #eafbe6; /* Light green for eco-friendly feel */
   padding: 80px 20px;        /* More space around the content for a larger hero */
   border-radius: 12px;       /* Rounded corners */
   text-align: center;        /* Center the text */
@@ -67,7 +81,7 @@ h1 {
 }
 
 .hero-section h1 {
-  color: #b8860b;            /* Warm gold for the heading */
+  color: #388e3c;            /* Deep green for the heading */
   margin-bottom: 12px;
 }
 
@@ -76,10 +90,40 @@ h1 {
   font-size: 20px;
 }
 
+/* Hero section button styles */
+.hero-btn {
+  background-color: #388e3c; /* Deep green for eco theme */
+  color: #fff;                /* White text */
+  border: none;               /* No border */
+  border-radius: 6px;         /* Rounded corners */
+  padding: 16px 32px;         /* Large, easy-to-click button */
+  font-size: 20px;            /* Bigger text for visibility */
+  font-weight: bold;
+  margin-top: 24px;           /* Space above the button */
+  cursor: pointer;            /* Pointer cursor on hover */
+  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.10); /* Soft green shadow */
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-btn:hover, .hero-btn:focus {
+  background-color: #66bb6a;  /* Lighter green on hover */
+  transform: scale(1.07);     /* Slightly grow the button */
+  box-shadow: 0 6px 20px rgba(56, 142, 60, 0.18); /* Stronger shadow */
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .hero-btn {
+    width: 100%;              /* Full width on small screens */
+    font-size: 18px;
+    padding: 14px 0;
+  }
+}
+
 /* Navigation bar styles */
 .navbar {
   width: 100%;
-  background-color: #fffbe7; /* Very light yellow for friendliness */
+  background-color: #eafbe6; /* Match hero section for a green theme */
   box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Soft shadow for separation */
   padding: 0;
   margin: 0;
@@ -101,7 +145,7 @@ h1 {
 
 .navbar a {
   text-decoration: none; /* Remove underline */
-  color: #b8860b;        /* Warm gold color for links */
+  color: #388e3c;        /* Deep green for links */
   font-size: 20px;
   font-weight: bold;
   padding: 18px 0;       /* Padding for clickable area */
@@ -110,7 +154,7 @@ h1 {
 }
 
 .navbar a:hover {
-  color: #ff9800; /* Brighter orange on hover */
+  color: #66bb6a; /* Lighter green on hover */
 }
 
 /* Hamburger menu styles */
@@ -128,7 +172,7 @@ h1 {
   display: block;
   width: 28px;
   height: 4px;
-  background: #b8860b;
+  background: #388e3c;
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
@@ -143,7 +187,7 @@ h1 {
   .navbar ul {
     flex-direction: column;
     align-items: flex-start;
-    background: #fffbe7;
+    background: #eafbe6;
     position: absolute;
     top: 60px;
     left: 0;
@@ -172,10 +216,27 @@ h1 {
     flex-direction: column;    /* Stack cards vertically */
     align-items: center;       /* Center cards horizontally */
     justify-content: center;   /* Center cards vertically */
-    position: relative; 
-    left: -0.8rem;
+    left: 0;                   /* Remove any left offset */
+    position: static;          /* Remove relative positioning */
+  }
+  .card {
+    margin-left: 0;            /* Remove any left margin */
+    margin-right: 0;           /* Remove any right margin */
   }
   body {
     justify-content: flex-start; /* Let hero section stay at the top, cards fill below */
   }
+}
+
+/* Footer styles */
+.footer {
+  width: 100%;
+  background-color: #eafbe6; /* Match the eco-friendly theme */
+  color: #388e3c;             /* Deep green text */
+  text-align: center;         /* Center the text */
+  padding: 18px 0;            /* Space above and below the text */
+  font-size: 18px;
+  position: relative;         /* Normal flow, always at the bottom of content */
+  margin-top: 32px;           /* Space above the footer */
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04); /* Soft shadow at the top */
 }

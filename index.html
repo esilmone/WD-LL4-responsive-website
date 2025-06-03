@@ -28,12 +28,14 @@
   <!-- Hero Section -->
   <div class="hero-section">
     <!-- Main heading for the website -->
-    <h1>Welcome to Your Next Adventure!</h1>
+    <h1>Travel Sustainably, Explore Responsibly!</h1>
     <!-- Short description for the hero section -->
-    <p>Discover amazing places and plan your dream trip with us.</p>
+    <p>Discover eco-friendly destinations and tips for making your adventures better for the planet.</p>
+    <!-- Call-to-action button -->
+    <button class="hero-btn">Plan your adventure now</button>
   </div>
   <!-- Travel Cards Section -->
-  <h2>Popular Travel Destinations</h2>
+  <h2>Explore Eco-Friendly Destinations</h2>
 
   <!-- Cards container -->
   <div class="card-container">
@@ -42,39 +44,44 @@
       <!-- Image for the destination -->
       <img src="img/switzerland.jpg" alt="Switzerland">
       <!-- Name of the place -->
-      <h2>Mountain Escape</h2>
+      <h2>Switzerland</h2>
       <!-- Short description -->
-      <p>Enjoy beautiful mountain views and fresh air.</p>
+      <p>Enjoy beautiful mountain views and fresh air. Support local conservation efforts by hiking on marked trails.</p>
     </div>
 
     <!-- Card 2 -->
     <div class="card" id="philippines">
       <img src="img/philippines.jpg" alt="Philippines Beach">
-      <h2>Sunny Beach</h2>
-      <p>Relax on the sand and swim in the sea.</p>
+      <h2>Philippines</h2>
+      <p>Relax on the sand and swim in the sea. Choose eco-resorts and help keep beaches clean.</p>
     </div>
 
     <!-- Card 3 -->
     <div class="card" id="greece">  
       <img src="img/greece.jpg" alt="Greece City">
-      <h2>City Adventure</h2>
-      <p>Explore exciting cities full of culture.</p>
+      <h2>Greece</h2>
+      <p>Explore exciting cities full of culture. Use public transport and support green businesses.</p>
     </div>
   </div>
+  <footer class="footer">
+    &copy; 2025 Copyright
+  </footer>
   <script src="script.js"></script>
   <script>
     // Hamburger menu toggle for mobile
     const hamburger = document.getElementById('hamburger-menu');
     const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', function() {
-      navLinks.classList.toggle('show');
-    });
-    // Also allow keyboard accessibility
-    hamburger.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', function() {
         navLinks.classList.toggle('show');
-      }
-    });
+      });
+      // Also allow keyboard accessibility
+      hamburger.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          navLinks.classList.toggle('show');
+        }
+      });
+    }
   </script>
 </body>
 

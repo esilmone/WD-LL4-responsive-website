@@ -1,7 +1,7 @@
 /* Style for the whole page */
 body {
   font-family: Arial, sans-serif; /* Sets a clean font */
-  background-color: #e6f4ea;     /* Soft green background for sustainability */
+  background-color: #7fd6ff;     /* Soft green background for sustainability */
   margin: 0;                    /* Remove default body margin so hero is flush with the edges */
   margin-top: 0;                /* Remove top margin so content starts at the very top */
   min-height: 100vh; /* Make sure body takes at least the full viewport height */
@@ -14,7 +14,7 @@ body {
 /* Style for the main heading */
 h1 {
   text-align: center;            /* Centers the heading */
-  color: #333;
+  color: #fff;                   /* White text for h1 */
 }
 
 /* Center all h2 headings */
@@ -34,7 +34,7 @@ h2 {
 /* Style for each card */
 .card {
   background-color: #fff;        /* White background */
-  border: 1px solid #b2dfdb;        /* Soft teal border for eco look */
+  border: 1px solid #e3f2fd;     /* Lighter blue border for eco look */
   border-radius: 8px;            /* Rounded corners */
   width: 350px;                  /* Increased width for larger cards */
   padding: 24px;                 /* More space inside the card */
@@ -61,27 +61,32 @@ h2 {
 .card h2 {
   margin: 12px 0 8px 0;          /* Space around the title */
   font-size: 20px;
-  color: #388e3c; /* Green for card titles */
+  color: #005f7f; /* Green for card titles */
 }
 
 /* Style for the card description */
 .card p {
-  color: #2e7d32; /* Darker green for descriptions */
+  color: #005f7f; /* Darker green for descriptions */
   font-size: 16px;
 }
 
-/* Hero section with a friendly yellow background */
+/* Hero section with a background image */
 .hero-section {
-  background-color: #eafbe6; /* Light green for eco-friendly feel */
+  background: url('img/sky.jpg') center/cover no-repeat; /* Only the sky image as background */
   padding: 80px 20px;        /* More space around the content for a larger hero */
   border-radius: 12px;       /* Rounded corners */
-  text-align: center;        /* Center the text */
+  text-align: left;        /* Align text to the left */
+  padding-left: 40px;      /* Add extra space on the left for better appearance */
   margin: 0;                 /* Remove all margins from the hero section */
   box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Soft shadow for depth */
 }
 
+.hero-section h1, .hero-section p, .hero-btn {
+  text-align: left;        /* Ensure all hero content is left-aligned */
+}
+
 .hero-section h1 {
-  color: #388e3c;            /* Deep green for the heading */
+  color: #fff;            /* Deep green for the heading */
   margin-bottom: 12px;
 }
 
@@ -92,38 +97,43 @@ h2 {
 
 /* Hero section button styles */
 .hero-btn {
-  background-color: #388e3c; /* Deep green for eco theme */
-  color: #fff;                /* White text */
-  border: none;               /* No border */
-  border-radius: 6px;         /* Rounded corners */
-  padding: 16px 32px;         /* Large, easy-to-click button */
-  font-size: 20px;            /* Bigger text for visibility */
+  background-color: #7fd6ff; /* Pale blue for the button */
+  color: #fff;            /* White text for the button */
+  border: none;
+  border-radius: 6px;
+  padding: 16px 32px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 24px;           /* Space above the button */
-  cursor: pointer;            /* Pointer cursor on hover */
-  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.10); /* Soft green shadow */
+  margin-top: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.10);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .hero-btn:hover, .hero-btn:focus {
-  background-color: #66bb6a;  /* Lighter green on hover */
-  transform: scale(1.07);     /* Slightly grow the button */
-  box-shadow: 0 6px 20px rgba(56, 142, 60, 0.18); /* Stronger shadow */
+  background-color: #bbdefb;  /* Lighter blue on hover */
+  color: #fff;            /* Keep text white on hover/focus */
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(56, 142, 60, 0.18);
   outline: none;
 }
 
 @media (max-width: 600px) {
   .hero-btn {
-    width: 100%;              /* Full width on small screens */
+    width: 100%;
     font-size: 18px;
     padding: 14px 0;
+  }
+  .hero-section {
+    padding-left: 16px;    /* Less left padding on small screens */
+    padding-right: 16px;
   }
 }
 
 /* Navigation bar styles */
 .navbar {
   width: 100%;
-  background-color: #eafbe6; /* Match hero section for a green theme */
+  background-color: #005f7f; /* Deep blue as requested */
   box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Soft shadow for separation */
   padding: 0;
   margin: 0;
@@ -145,7 +155,7 @@ h2 {
 
 .navbar a {
   text-decoration: none; /* Remove underline */
-  color: #388e3c;        /* Deep green for links */
+  color: #fff;        /* White for nav links */
   font-size: 20px;
   font-weight: bold;
   padding: 18px 0;       /* Padding for clickable area */
@@ -154,7 +164,7 @@ h2 {
 }
 
 .navbar a:hover {
-  color: #66bb6a; /* Lighter green on hover */
+  color: #7fd6ff; /* Lighter blue on hover for contrast */
 }
 
 /* Hamburger menu styles */
@@ -172,7 +182,7 @@ h2 {
   display: block;
   width: 28px;
   height: 4px;
-  background: #388e3c;
+  background: #005f7f;
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
@@ -187,7 +197,7 @@ h2 {
   .navbar ul {
     flex-direction: column;
     align-items: flex-start;
-    background: #eafbe6;
+    background: #e3f2fd;
     position: absolute;
     top: 60px;
     left: 0;
@@ -231,12 +241,12 @@ h2 {
 /* Footer styles */
 .footer {
   width: 100%;
-  background-color: #eafbe6; /* Match the eco-friendly theme */
-  color: #388e3c;             /* Deep green text */
-  text-align: center;         /* Center the text */
-  padding: 18px 0;            /* Space above and below the text */
+  background-color: #005f7f; /* Deep blue as requested */
+  color: #fff;             /* White text */
+  text-align: center;
+  padding: 18px 0;
   font-size: 18px;
-  position: relative;         /* Normal flow, always at the bottom of content */
-  margin-top: 32px;           /* Space above the footer */
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.04); /* Soft shadow at the top */
+  position: relative;
+  margin-top: 32px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
 }
